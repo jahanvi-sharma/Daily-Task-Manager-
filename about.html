@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+        /* Parallax Scrolling */
+        .parallax {
+            background-image: url('background.jpg'); 
+            height: 300px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;}
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-blue-600 text-white p-4 flex justify-between items-center">
+        <h1 class="text-xl font-bold">Daily Hub</h1>
+        <ul class="flex space-x-6">
+                <li><a href="homescreen.html" class="hover:underline">Home</a></li>
+                <li><a href="features.html" class="hover:underline">Features</a></li>
+                <li><a href="about.html" class="underline font-semibold">About</a></li>
+                <li><a href="contact.html" class="hover:underline">Contact</a></li>
+                <li><a href="loginpage.html" class="hover:underline">Login</a></li>
+            </ul>
+    </nav>
+
+    <!-- Parallax Section -->
+    <div class="parallax flex items-center justify-center text-white text-3xl font-bold">Elevate Your Productivity 🚀 
+    </div>
+
+    <!-- About Section -->
+     <section class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-10">
+        <h2 class="text-3xl font-bold text-gray-800 text-center animate-fade-in">About Daily Task Manager</h2>
+        <p class="text-gray-600 text-center mt-2">A simple yet powerful tool to help you organize, track, and complete your daily tasks effortlessly.</p>
+
+    <!-- Features Grid -->
+     <div class="grid grid-cols-2 gap-6 mt-6">
+        <div class="bg-gray-100 p-6 rounded-lg shadow transition-transform duration-300 hover:scale-105">
+            <h3 class="text-lg font-semibold text-blue-700">📅 Task Scheduling</h3>
+            <p class="text-gray-600">Plan your tasks efficiently and never miss a deadline.</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-lg shadow transition-transform duration-300 hover:scale-105">
+            <h3 class="text-lg font-semibold text-yellow-600">🔔 Reminders & Alerts</h3>
+            <p class="text-gray-600">Set notifications so you never miss an important task.</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-lg shadow transition-transform duration-300 hover:scale-105">
+            <h3 class="text-lg font-semibold text-green-600">📊 Progress Tracking</h3>
+            <p class="text-gray-600">Monitor your productivity and improve daily.</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-lg shadow transition-transform duration-300 hover:scale-105">
+            <h3 class="text-lg font-semibold text-purple-600">📂 Task Categories</h3>
+            <p class="text-gray-600">Sort tasks by Work, Study, Personal, and more.</p>
+        </div>
+     </div>
+
+    <!-- Our Mission Section -->
+     <div class="mt-8 p-6 bg-blue-100 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold text-gray-800 text-center">🌟 Our Mission</h2>
+        <p class="text-gray-700 text-center mt-2">Our goal is to provide a **seamless and intuitive task management experience** that helps users boost productivity and stay organized effortlessly.</p></div>
+        <p class="italic text-gray-500 mt-6">"Success is the sum of small efforts, repeated day in and day out." — Robert Collier</p>
+    </section>
+
+    <!-- CTA Button -->
+     <div class="text-center mt-6">
+        <a href="signuppage.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition-all">Get Started Today!</a>
+    </div>
+</section>
+
+    <!-- Floating Action Button (FAB) -->
+     <a href="addtask1.html" class="fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-all">➕</a>
+
+    <!-- Why Choose Us Section -->
+     <section class="bg-gradient-to-r from-blue-100 to-purple-200 py-12 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Why Choose Daily Task Manager?</h2>
+            <p class="text-gray-600 mb-6">Our mission is to make task management simple, intuitive, and effective for everyone. With smart reminders, progress tracking, and a user-friendly design, we help you stay ahead of your daily goals.</p>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-lg font-semibold text-blue-700">✅ Easy to Use</h3>
+                    <p class="text-gray-600">A simple, no-clutter interface for smooth task management.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-lg font-semibold text-green-700">✅ Smart Reminders</h3>
+                    <p class="text-gray-600">Stay on top of your tasks with timely notifications.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-lg font-semibold text-purple-700">✅ Customizable Themes</h3>
+                    <p class="text-gray-600">Choose a layout and color scheme that fits your style.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-lg font-semibold text-yellow-700">✅ Progress Insights</h3>
+                    <p class="text-gray-600">Analyze your productivity trends and boost efficiency.</p>
+                </div>
+            </div>
+            <a href="features.html" class="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-blue-700 transition-all">Explore Features</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center p-4 mt-12">
+        © 2025 Daily Task Manager | All rights reserved.
+    </footer>
+</body>
+</html>

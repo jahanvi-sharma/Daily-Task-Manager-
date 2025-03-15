@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-500 dark:bg-gray-900 flex items-center justify-center min-h-screen transition duration-300">
+    <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg w-96 transition duration-300">
+        <h2 class="text-2xl font-bold text-center text-gray-800 dark:text-white mb-4">Sign Up</h2>
+
+        <!-- Email Input -->
+        <input id="email" type="email" placeholder="Enter Email" class="w-full p-3 mb-2 border rounded-md focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white transition duration-300">
+        <p id="emailError" class="text-red-500 text-sm hidden">Invalid email format</p>
+
+        <!-- Password Input -->
+        <input id="password" type="password" placeholder="Enter Password" class="w-full p-3 mb-2 border rounded-md focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white transition duration-300">
+        
+        <!-- Confirm Password Input -->
+        <input id="confirmPassword" type="password" placeholder="Confirm Password" class="w-full p-3 mb-2 border rounded-md focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white transition duration-300">
+        <p id="passwordError" class="text-red-500 text-sm hidden">Passwords do not match</p>
+
+        <!-- Signup Button -->
+        <button onclick="validateForm()" class="w-full bg-blue-500 hover:bg-blue-600 dark:bg-blue-700 dark:hover:bg-blue-800 text-white font-semibold py-3 rounded-md transition duration-300">Sign Up</button>
+        <p class="text-center text-gray-600 dark:text-gray-300 mt-3">Already have an account? <a href="loginpage.html" class="text-blue-500 dark:text-blue-400 hover:underline">Login</a></p>
+
+        <!-- Dark Mode Toggle -->
+        <div class="flex items-center justify-center mt-4">
+            <label for="darkModeToggle" class="flex items-center cursor-pointer">
+                <span class="mr-2 text-gray-600 dark:text-gray-300">Dark Mode</span>
+                <input type="checkbox" id="darkModeToggle" class="hidden" onchange="toggleDarkMode()">
+                <div class="w-10 h-5 bg-gray-400 dark:bg-gray-700 rounded-full relative">
+                    <div class="w-4 h-4 bg-white dark:bg-gray-300 rounded-full absolute left-1 top-1 transition-transform duration-300 dark:translate-x-5"></div>
+                </div>
+            </label>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+
+            // Email validation
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById("emailError").classList.remove("hidden");
+            } else {
+                document.getElementById("emailError").classList.add("hidden");
+            }
+
+            // Password validation
+            if (password !== confirmPassword || password === "") {
+                document.getElementById("passwordError").classList.remove("hidden");
+            } else {
+                document.getElementById("passwordError").classList.add("hidden");
+            }
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark");
+        }
+    </script>
+</body>
+</html>

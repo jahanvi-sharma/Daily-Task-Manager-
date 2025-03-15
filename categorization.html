@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorization</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-100 p-6">
+
+    <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold mb-4 text-center">Task Categories</h2>
+
+        <!-- Predefined Categories -->
+        <div class="mb-4">
+            <h3 class="text-lg font-semibold mb-2">Predefined Categories:</h3>
+            <ul class="space-y-2">
+                <li class="p-2 bg-blue-500 text-white rounded-md">Personal</li>
+                <li class="p-2 bg-green-500 text-white rounded-md">Work</li>
+                <li class="p-2 bg-purple-500 text-white rounded-md">Study</li>
+            </ul>
+        </div>
+
+        <!-- Custom Category Input -->
+        <div class="mt-4">
+            <h3 class="text-lg font-semibold mb-2">Add Custom Category:</h3>
+            <div class="flex gap-2">
+                <input id="customCategory" type="text" placeholder="Enter custom category..." 
+                    class="w-full p-2 border border-gray-300 rounded-md">
+                <button onclick="addCustomCategory()" class="bg-blue-500 text-white px-4 py-2 rounded-md">
+                    Add
+                </button>
+            </div>
+        </div>
+
+        <!-- Custom Categories List -->
+        <div class="mt-4">
+            <h3 class="text-lg font-semibold mb-2">Custom Categories:</h3>
+            <ul id="customCategoryList" class="space-y-2"></ul>
+        </div>
+    </div>
+
+    <script>
+        function addCustomCategory() {
+            let categoryInput = document.getElementById("customCategory").value.trim();
+            if (categoryInput === "") return;
+
+            let categoryList = document.getElementById("customCategoryList");
+            let li = document.createElement("li");
+            li.className = "p-2 bg-gray-300 rounded-md flex justify-between";
+            li.innerHTML = `${categoryInput} 
+                <button onclick="this.parentElement.remove()" class="text-red-500 font-bold">X</button>`;
+            
+            categoryList.appendChild(li);
+            document.getElementById("customCategory").value = ""; // Clear input
+        }
+    </script>
+
+</body>
+</html>

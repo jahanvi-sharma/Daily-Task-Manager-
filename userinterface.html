@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Interface</title>
+    
+    <!-- Tailwind CSS -->
+     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+     
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <!-- AOS Library for Scroll Animations -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <style>
+    /* Custom Fade-in Animation */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);}
+        to {
+            opacity: 1;
+            transform: translateY(0);}}
+        .fade-in {
+            opacity: 0; /* Hidden initially, GSAP will fade it in */}
+    
+    /* Custom hover glow effect */
+    .hover-glow {
+        box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0);
+        transition: box-shadow 0.3s ease-in-out;}
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-300 to-purple-300 p-10">
+
+    <!-- Container -->
+     <div class="bg-white p-8 rounded-2xl shadow-xl text-center w-full max-w-lg" data-aos="fade-up">
+        <h1 class="text-2xl font-bold text-gray-800" data-aos="fade-down">Welcome to Our Interface</h1>
+        <p class="text-gray-600 mt-2" data-aos="fade-down" data-aos-delay="200">A simple and user-friendly design for a smooth experience.</p>
+    
+    <!-- Buttons with Scroll-triggered Animations -->
+     <div class="mt-6 space-y-4">
+    <button class="hover-glow w-full px-6 py-3 text-white bg-blue-600 rounded-lg text-lg font-semibold transition-all duration-300 
+        hover:bg-blue-700 hover:scale-105 hover:shadow-lg" data-aos="fade-up" data-aos-delay="300">
+        🚀 Fast & Responsive
+    </button>
+    <button class="hover-glow w-full px-6 py-3 text-white bg-green-600 rounded-lg text-lg font-semibold transition-all duration-300 
+    hover:bg-green-700 hover:scale-105 hover:shadow-lg"data-aos="fade-up" data-aos-delay="500">
+    🎨 Clean & Minimalist
+     </button>
+    
+    <button class="hover-glow w-full px-6 py-3 text-white bg-purple-600 rounded-lg text-lg font-semibold transition-all duration-300 
+    hover:bg-purple-700 hover:scale-105 hover:shadow-lg"data-aos="fade-up" data-aos-delay="700">
+    🔥 Smooth Animations
+</button>
+
+    <!-- Get Started Button with Bounce & Pulse -->
+    <a href="homescreen.html">
+        <button id="start-btn" class="hover-glow w-full px-6 py-3 text-white bg-indigo-600 rounded-lg text-lg font-semibold transition-all duration-300 
+        hover:bg-indigo-700 hover:scale-110 hover:shadow-xl border-2 border-transparent hover:border-indigo-400"
+        data-aos="fade-up" data-aos-delay="900 onclick="location.href="homescreen.html">
+        Get Started
+    </button></a>
+</div>
+
+<!-- JavaScript for Animations -->
+ <script>
+ 
+// GSAP - Custom Hover Glow Effect
+document.querySelectorAll('.hover-glow').forEach(button => {
+    button.addEventListener('mouseenter', () => {
+        gsap.to(button, { boxShadow: "0px 0px 15px rgba(255, 255, 255, 0.7)", duration: 0.3 });
+    });
+    button.addEventListener('mouseleave', () => {
+        gsap.to(button, { boxShadow: "0px 0px 0px rgba(255, 255, 255, 0)", duration: 0.3 });
+    });
+});
+
+ // Using GSAP for Smooth Fade-in & Staggered Effects
+gsap.to(".fade-in", {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    stagger: 0.3, // Delay each element by 0.3s
+    ease: "power2.out"});
+    
+// Initialize AOS (Animate On Scroll)
+AOS.init({
+    duration: 1000, // Animation duration in milliseconds
+    easing: 'ease-in-out', // Smooth easing
+    once: false, // Animation runs every time element comes into view
+});
+    
+// Get Started Button - Bounce then Pulse Effect
+        gsap.from("#start-btn", {
+            scale: 1.2,
+            duration: 0.5,
+            ease: "bounce.out"});
+            setTimeout(() => {
+        gsap.to("#start-btn", {
+            scale: 1,
+            repeat: -1,
+            yoyo: true,
+            duration: 1,
+            ease: "power1.inOut"});
+        }, 5000);
+</script>
+</body>
+</html>
